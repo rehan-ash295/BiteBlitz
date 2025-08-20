@@ -4,10 +4,12 @@ import Navbar from '../components/Navbar';
 
 export default function MyOrder() {
     const [orderData, setorderData] = useState({});
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
 
     const fetchMyOrder = async () => {
         console.log(localStorage.getItem('UserEmail'));
-        await fetch("http://localhost:5000/api/myOrderData", {
+        await fetch(`${BASE_URL}/api/myOrderData`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

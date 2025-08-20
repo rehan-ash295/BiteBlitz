@@ -11,8 +11,10 @@ export default function Signup() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-    const response = await fetch("http://localhost:5000/api/createUser", {
+
+    const response = await fetch(`${BASE_URL}/api/createUser`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials)

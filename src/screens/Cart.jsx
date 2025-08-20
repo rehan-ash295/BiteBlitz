@@ -6,6 +6,8 @@ import { useCart, useDispatch } from '../components/ContextReducer';
 export default function Cart() {
     const [qty, setQty] = useState(1)
     let data = useCart();
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
 
 
     let dispatch = useDispatch();
@@ -21,7 +23,7 @@ export default function Cart() {
     const handleCheckOut = async () => {
         let userEmail = localStorage.getItem("UserEmail");
 
-        let response = await fetch("http://localhost:5000/api/orderData", {
+        let response = await fetch(`${BASE_URL}/api/orderData`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
