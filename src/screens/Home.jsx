@@ -8,9 +8,11 @@ export default function Home() {
     const [search, setsearch] = useState("")
     const [foodItem, setItem] = useState([]);
     const [foodCat, setCat] = useState([]);
+    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
 
     const loadData = async () => {
-        const output = await fetch("http://localhost:5000/api/fooditem",
+        const output = await fetch(`${BASE_URL}/api/fooditem`,
             {
                 method: "POST",
                 headers: {

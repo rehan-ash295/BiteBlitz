@@ -18,6 +18,7 @@ export default function AuthPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const BASE_URL_SIGN = process.env.NEXT_PUBLIC_API_URL;
 
     const endpoint = isLogin ? "login" : "createUser";
     const payload = isLogin
@@ -29,7 +30,7 @@ export default function AuthPage() {
           password: credentials.password
         };
 
-    const response = await fetch(`http://localhost:5000/api/${endpoint}`, {
+    const response = await fetch(`${BASE_URL_SIGN}/api/${endpoint}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
