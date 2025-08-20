@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 
 export default function MyOrder() {
     const [orderData, setorderData] = useState({});
-    const BASE_URL = process.env.VITE_API_URL;
+    const BASE_URL = import.meta.env.VITE_API_URL;
 
 
     const fetchMyOrder = async () => {
