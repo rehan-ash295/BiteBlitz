@@ -11,7 +11,7 @@ export default function Signup() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+    const BASE_URL = process.env.VITE_API_URL;
 
 
     const response = await fetch(`${BASE_URL}/api/createUser`, {

@@ -8,7 +8,8 @@ export default function Home() {
     const [search, setsearch] = useState("")
     const [foodItem, setItem] = useState([]);
     const [foodCat, setCat] = useState([]);
-    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+    const BASE_URL = import.meta.env.VITE_API_URL;
+
 
 
     const loadData = async () => {

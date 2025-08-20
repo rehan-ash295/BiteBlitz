@@ -6,7 +6,8 @@ import { useCart, useDispatch } from '../components/ContextReducer';
 export default function Cart() {
     const [qty, setQty] = useState(1)
     let data = useCart();
-    const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+    const BASE_URL = import.meta.env.VITE_API_URL;
+
 
 
 
