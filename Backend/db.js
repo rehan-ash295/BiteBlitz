@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const monguri = "mongodb+srv://test-user-347:uJq9QHSzXgNLG5Jb@cluster0.zq7oxht.mongodb.net/";
+const monguri = "";
 async function main() {
     try {
         await mongoose.connect(monguri, { dbName: "BIteBlitz" });
