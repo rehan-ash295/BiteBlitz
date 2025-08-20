@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-const monguri = "";
+require('dotenv').config();
+const uri = process.env.URI;
+const monguri = uri;
+console.log(monguri)
 async function main() {
     try {
         await mongoose.connect(monguri, { dbName: "BIteBlitz" });
