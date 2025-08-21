@@ -11,7 +11,7 @@ export default function Signup() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const BASE_URL = process.env.VITE_API_URL;
+    const BASE_URL = import.meta.env.VITE_API_URL;
 
 
     const response = await fetch(`${BASE_URL}/api/createUser`, {
@@ -23,11 +23,12 @@ export default function Signup() {
     const json = await response.json();
     console.log("Signup Response:", json);
 
-    if (!json.success) {
+    if (!json) {
       alert("Kindly enter valid credentials");
-    } else {
+    } 
+    else {
       alert("Account created successfully!");
-      // Optionally redirect to login or home
+      
     }
   };
 

@@ -22,7 +22,7 @@ async function main() {
         const foodCatCollection = mongoose.connection.db.collection("Food_Category");
         const Catdata = await foodCatCollection.find({}).toArray();
         if (Catdata) {
-            console.log("Data found:");
+            console.log("Food Category Data found:");
             global.Cat_foodItems = Catdata;
             console.log(global.Cat_foodItems)
 

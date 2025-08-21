@@ -8,11 +8,13 @@ export default function Home() {
     const [search, setsearch] = useState("")
     const [foodItem, setItem] = useState([]);
     const [foodCat, setCat] = useState([]);
-    const BASE_URL = import.meta.env.VITE_API_URL;
+    
 
 
-
+const BASE_URL = import.meta.env.VITE_API_URL;
     const loadData = async () => {
+        console.log("url is",BASE_URL);
+        
         const output = await fetch(`${BASE_URL}/api/fooditem`,
             {
                 method: "POST",

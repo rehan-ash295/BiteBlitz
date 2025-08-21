@@ -41,8 +41,11 @@ export default function AuthPage() {
     console.log("Response:", json);
 
     if (json.success) {
-      localStorage.setItem("Localtoken", json.Usertoken);
-      localStorage.setItem("UserEmail", json.email);
+        localStorage.setItem("UserEmail", json.email);
+      
+      if(isLogin && json.Usertoken ){
+        localStorage.setItem("Localtoken", json.Usertoken);
+      } 
       window.location.href = "/";
     } else {
       alert("Kindly enter valid credentials");
